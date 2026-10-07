@@ -444,12 +444,12 @@ const I18N = {
     rule3t: "Descansa y muévete", rule3: "Duerme 7–8 horas y camina todos los días. Tu cuerpo cambia cuando descansas.",
     howKicker: "¿Cómo usar la app?",
     step1t: "1. Calcula", step1: "Tus calorías y proteína", step2t: "2. Entrena", step2: "Cuerpo completo y recuperación", step3t: "3. Marca tu día", step3: "Hábitos y reto de 30 días", step4t: "4. Pésate", step4: "1 vez por semana",
-    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Abre tu guía de 4 semanas inmediatamente aquí en la app. Tus datos permiten que Balmore responda a tu solicitud; el envío por correo no está automatizado ni confirmado. También puedes usar Rutina gratis sin registrarte.",
+    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Abre tu guía de 4 semanas inmediatamente aquí. Si dejas tu correo, el sistema intentará enviarte el enlace automáticamente; revisa también spam. Puedes usar Rutina gratis sin registrarte.",
     leadName: "Nombre", leadEmail: "Correo", leadWa: "WhatsApp", leadGoal: "Tu objetivo", leadSend: "Quiero mi plan gratis",
     goalFat: "Bajar grasa", goalMuscle: "Ganar músculo", goalBetter: "Sentirme mejor",
     leadNeed: "Escribe tu nombre y un correo válido o WhatsApp con código de país, y acepta el contacto sobre tu solicitud.", leadSending: "Enviando…",
     leadThanks: "¡Gracias{name}! 🙌", leadThanksP: "Solicitud enviada desde tu navegador. Se intentó enviar tu solicitud, pero esta app no puede confirmar su recepción. Si no recibes respuesta, escríbeme por WhatsApp. Tu rutina gratuita está disponible ahora.", leadAgain: "Enviar otros datos", leadWaMsg: "Te llevo a WhatsApp para enviarte el plan.",
-    leadPrivacy: "Tus datos son privados. Se envían al servicio de formularios de Google para que Balmore pueda responder. No ingreses información médica. Tu progreso se guarda solo en este navegador. Puedes darte de baja cuando quieras.",
+    leadPrivacy: "Tu nombre, contacto y objetivo se guardan en Google y en el registro privado de Notion para entregar el plan y responder a tu solicitud. No ingreses información médica. Tu progreso queda solo en este navegador. No te suscribes a publicidad; puedes pedir que se eliminen tus datos.",
     faqTitle: "Preguntas <span class=\"hl\">frecuentes</span>",
     moreTitle: "¿Quieres más <span class=\"hl\">acompañamiento</span>?", moreP: "El acompañamiento de pago está en preparación. Cuéntame qué apoyo te gustaría recibir, sin compromiso.", moreBtn: "Me interesa el acompañamiento →",
     follow: "Sígueme",
@@ -534,12 +534,12 @@ const I18N = {
     rule3t: "Rest and move", rule3: "Sleep 7–8 hours and walk every day. Your body changes while you rest.",
     howKicker: "How to use the app",
     step1t: "1. Calculate", step1: "Your calories and protein", step2t: "2. Train", step2: "Full body and recovery", step3t: "3. Check off your day", step3: "Habits and 30-day challenge", step4t: "4. Weigh in", step4: "Once a week",
-    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Open your 4-week guide immediately in the app. Your details let Balmore respond to your request; email delivery is not automated or confirmed. You can also use Routine for free without signing up.",
+    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Open your 4-week guide immediately here. If you provide an email, the system will try to send the link automatically; check spam too. You can use Routine for free without signing up.",
     leadName: "Name", leadEmail: "Email", leadWa: "WhatsApp", leadGoal: "Your goal", leadSend: "Send me my free plan",
     goalFat: "Lose fat", goalMuscle: "Build muscle", goalBetter: "Feel better",
     leadNeed: "Enter your name and a valid email or WhatsApp with country code, and consent to contact about this request.", leadSending: "Sending…",
     leadThanks: "Thank you{name}! 🙌", leadThanksP: "Your browser attempted to send your request; this app cannot confirm receipt. If you do not hear back, contact me on WhatsApp. Your free routine is available now.", leadAgain: "Send different info", leadWaMsg: "Taking you to WhatsApp to send you the plan.",
-    leadPrivacy: "Your info stays private. They are sent through Google’s form service so Balmore can respond. Do not enter medical information. Progress stays in this browser. Unsubscribe anytime.",
+    leadPrivacy: "Your name, contact and goal are stored in Google and the private Notion registry to deliver the plan and respond to your request. Do not enter medical information. Progress stays in this browser. You are not subscribed to marketing; you can request deletion of your details.",
     faqTitle: "Frequently asked <span class=\"hl\">questions</span>",
     moreTitle: "Want more <span class=\"hl\">support</span>?", moreP: "Paid support is being prepared. Tell me what help you would like, without a commitment.", moreBtn: "Interested in future support →",
     follow: "Follow me",
@@ -1490,7 +1490,7 @@ function vInicio() {
 function leadStatus() {
   if (S.lead.status === "pending") return bi("Tu plan ya está disponible. Intentando enviar tu solicitud…", "Your plan is available. Trying to send your request…");
   if (S.lead.status === "failed") return bi("Tu plan sigue disponible. No se pudo enviar tu solicitud; puedes contactar a Balmore por WhatsApp.", "Your plan is still available. Your request could not be sent; contact Balmore on WhatsApp.");
-  return bi("Tu plan está disponible aquí. La app no puede confirmar que Balmore recibió tus datos ni que se envió un correo.", "Your plan is available here. The app cannot confirm that Balmore received your details or that an email was sent.");
+  return bi("Tu plan está disponible aquí. Si dejaste correo, revisa tu bandeja y spam para el enlace automático. La app no puede confirmar la entrega; si no llega, contacta a Balmore por WhatsApp.", "Your plan is available here. If you provided email, check your inbox and spam for the automatic link. The app cannot confirm delivery; contact Balmore on WhatsApp if it does not arrive.");
 }
 function leadCard() {
   if (S.lead.sent) return `<div class="card lead" id="leadCard"><h3>${bi("Tu plan de 4 semanas está listo", "Your 4-week plan is ready")}</h3>
@@ -2003,7 +2003,7 @@ function followupCard() {
     <label for="fuEmail">${t("leadEmail")}</label><input class="inp" id="fuEmail" name="email" type="email" maxlength="254" autocomplete="email">
     <label for="fuWa">WhatsApp</label><input class="inp" id="fuWa" name="whatsapp" type="tel" maxlength="30" autocomplete="tel" placeholder="+503">
     <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-    <label class="small"><input name="consent" type="checkbox"> ${bi("Acepto enviar mi nombre, contacto, objetivo, estado del ciclo, interés y número de días marcados a Google para que Balmore responda a esta solicitud. No me suscribo a publicidad.", "I agree to send my name, contact, goal, cycle status, interest and count of logged days to Google so Balmore can respond to this request. This does not subscribe me to marketing.")}</label>
+    <label class="small"><input name="consent" type="checkbox"> ${bi("Acepto guardar mi nombre, contacto, objetivo, estado del ciclo, interés y número de días marcados en Google y el registro privado de Notion para que Balmore responda a esta solicitud. No me suscribo a publicidad.", "I agree to store my name, contact, goal, cycle status, interest and count of logged days in Google and the private Notion registry so Balmore can respond to this request. This does not subscribe me to marketing.")}</label>
     <p class="small muted">${bi("No se envían tu peso, cargas, repeticiones ni notas privadas. El mensaje de WhatsApp solo se envía si tú lo envías allí.", "Weight, loads, repetitions and private notes are not sent. The WhatsApp message is sent only if you send it there.")}</p>
     <div id="followupErr" class="err" role="alert" hidden></div><button class="btn" type="submit" ${status === "pending" ? "disabled" : ""}>${bi("Solicitar seguimiento y preparar WhatsApp →", "Request follow-up and prepare WhatsApp →")}</button></form>
     ${record ? `<p class="small" role="status">${status === "pending" ? bi("Intentando registrar la solicitud. WhatsApp está listo abajo.", "Trying to record the request. WhatsApp is ready below.") : status === "failed" ? bi("No se pudo enviar el registro. Envía el mensaje de WhatsApp para contactar a Balmore.", "The request could not be sent. Send the WhatsApp message to contact Balmore.") : bi("La solicitud se intentó enviar; la app no puede confirmar que llegó al registro o a Balmore. WhatsApp preparado no significa enviado.", "The request was attempted; the app cannot confirm it reached the registry or Balmore. Prepared WhatsApp does not mean sent.")}</p>` : ""}
