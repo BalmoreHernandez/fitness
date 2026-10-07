@@ -15,7 +15,7 @@ Archivo principal: `index.html`. Es autocontenido y funciona sin internet; la ú
 - `CONFIG.COACHING_URL`: enlace de WhatsApp para coaching.
 - `CONFIG.LEAD_FORM_URL`: URL del Web App de Google Apps Script. Si está vacía, el plan sigue disponible y se indica que la solicitud no se envió.
   - El envío es `fetch(url, {method:'POST', mode:'no-cors', body: URLSearchParams})`.
-  - Campos: `nombre`, `email`, `whatsapp`, `objetivo`, `idioma` (es/en), `fuente` = `app-plan-4-semanas`, `consentimiento`, `consentimiento_fecha`. Verificar que el script original almacene los campos de consentimiento.
+  - Campos: `nombre`, `email`, `whatsapp`, `objetivo`, `idioma` (es/en), `fuente` = `app-plan-4-semanas`, `consentimiento`, `consentimiento_fecha`. El script original almacena consentimiento y fecha.
   - Hay un honeypot `website`: si viene lleno, no se envía nada.
 - `CONFIG.VIDEOS`: `{ idEjercicio: "https://..." }`. El botón de video solo aparece cuando hay URL. También sirve `EX[id].videoUrl`.
 - `CONFIG.RETO_BALMORE.ENTRIES`: agrega un registro por semana, por ejemplo `{ date: "2026-10-09", weight: 247.5, note: { es: "...", en: "..." } }`.
@@ -28,7 +28,7 @@ Archivo principal: `index.html`. Es autocontenido y funciona sin internet; la ú
 - Después de validar nombre/contacto/consentimiento, muestra acceso inmediato a la rutina existente de cuatro semanas. No genera un plan personalizado ni envía un PDF. El envío de contacto ocurre en paralelo; la respuesta opaca NO verifica registro ni email. El plan permanece disponible aunque falle la red.
 - Acompañamiento de pago: próximamente, sin precios ni checkout; calificación y mensaje de WhatsApp revisable.
 - Revisión semanal privada en almacenamiento local.
-- Eventos `fitness:analytics` locales; no proveedor de analítica configurado. Solo evento, idioma y pestaña; nunca contacto, peso o reflexiones. La calificación no se envía a Notion automáticamente.
+- Eventos `fitness:analytics` locales; no proveedor de analítica configurado. Solo evento, idioma y pestaña; nunca contacto, peso o reflexiones. Los formularios de plan y seguimiento se sincronizan con el registro original de Notion; la calificación informal de WhatsApp permanece local.
 - Estado real del servicio y registro de operación: Balmore HQ en Notion.
 - Cambios locales en rama `improve-free-fitness-journey`; despliegue requiere aprobación.
 
@@ -48,7 +48,16 @@ Archivo principal: `index.html`. Es autocontenido y funciona sin internet; la ú
 - En S4 hay enlace al cierre del ciclo; también disponible en Progreso. El usuario declara si terminó o aún quiere revisar. Seleccionar S4 o la fecha no se consideran prueba de completar el plan.
 - Resumen: días marcados Entrené desde planStart, sin peso, cargas, repeticiones ni reflexiones. Es un conteo de registros en el navegador, no de sesiones verificadas.
 - Formulario solicita nombre/contacto, etapa, objetivo, interés gratuito o información sobre continuidad de pago, con consentimiento específico.
-- Usa el Google Apps Script original. fuente sigue app-plan-4-semanas para compatibilidad; objetivo incluye el prefijo Seguimiento 4 semanas y resumen; añade tipo_solicitud, interes y estado_ciclo. Confirmar que el script original almacene esos campos adicionales.
+- Usa el Google Apps Script original. fuente sigue app-plan-4-semanas para compatibilidad; objetivo incluye el prefijo Seguimiento 4 semanas y resumen; añade tipo_solicitud, interes y estado_ciclo. El script original almacena el tipo y el resumen de seguimiento.
 - Respuesta no-cors opaca se registra como unverified; fallo de red como failed. Ambos conservan el mensaje listo para WhatsApp. Abrir WhatsApp es distinto de enviar o recibir un mensaje.
 - Estado local por ciclo, sin contacto persistido: requested/pending, unverified/failed y whatsappOpened. Eventos locales: cycle_review_opened, followup_requested, followup_unverified/failed, followup_whatsapp_opened.
-- Balmore confirma oferta/precio/alcance antes de compra; sin checkout, cobranza ni suscripción. Las herramientas gratuitas pueden repetirse. Notion no se sincroniza automáticamente.
+- Balmore confirma oferta/precio/alcance antes de compra; sin checkout, cobranza ni suscripción. Las herramientas gratuitas pueden repetirse. El registro original de Notion se sincroniza automáticamente desde el backend.
+
+## Automatización activada — 7 de octubre de 2026
+
+- Actualizado el despliegue existente App Fitness Leads a versión 2, conservando su URL. Balmore aprobó activación y pruebas a su propio email.
+- Entrega automática ES/EN por email del enlace a la guía ilustrada en la app; acuse distinto para seguimiento. No envía un PDF adjunto ni una secuencia de publicidad.
+- Google conserva registros y estados de cada canal. Notion usa Leads – App Fitness original, con búsquedas por contacto para evitar duplicados y preservación de estados de clientes.
+- Probados en vivo signup y seguimiento: ambos emails llegaron al inbox de Balmore, y un solo registro Notion contiene ambas solicitudes.
+- Credencial solo en Script Properties del proyecto original. App informa sobre Google y Notion; el progreso privado permanece en el navegador.
+- Código de respaldo y pruebas en la rama local improve-free-fitness-journey, carpeta backend. Límite inicial: 30 solicitudes por día UTC; revisar capacidad antes de ampliar promoción.
