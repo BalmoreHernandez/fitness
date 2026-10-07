@@ -305,6 +305,7 @@ select.inp{background-image:linear-gradient(45deg,transparent 50%,#566074 50%),l
 .toast,.cta a{box-shadow:0 8px 24px rgba(14,26,46,.18)}
 .grid30 button.lock{color:#6B7487}
 
+#offers{scroll-margin-top:90px}
 </style>
 </head>
 <body>
@@ -336,7 +337,7 @@ const CONFIG = {
   BRAND_NAME:   "Balmore Hernandez",
   // Link de TODOS los botones "Trabaja conmigo" (y respaldo del formulario de leads).
   COACHING_URL: "https://wa.me/50366803369?text=Hola%20Balmore%2C%20vengo%20de%20tu%20app%20y%20quiero%20informaci%C3%B3n%20sobre%20el%20coaching",
-  APP_URL:      "app.balmorehernandez.com",   // se muestra en la imagen para compartir
+  APP_URL:      "balmorehernandez.com/fitness/",   // se muestra en la imagen para compartir
   // Formulario "Recibe tu plan de 4 semanas": URL del Google Apps Script (Nico). Vacío = el botón abre WhatsApp (COACHING_URL).
   LEAD_FORM_URL: "https://script.google.com/macros/s/AKfycbwi-qKbRDoItlIyQsywu4rAPkB7_3EFdjMErQnMWOAI4eBzJJO2Joh0k80DEBaTr56u/exec",
   ACCENT_COLOR: "#A3263A",           // vino G8b (marca G8b). El resto de colores está en :root del CSS
@@ -433,7 +434,7 @@ const I18N = {
     tagline: "Master your body, mind and money.", langBtn: "EN", // eslogan oficial en inglés también en modo ES (una versión en español requiere aprobación de Balmore)
     langAria: "Cambiar idioma a inglés",
     tabInicio: "Inicio", tabRutina: "Rutina", tabComida: "Comida", tabHoy: "Hoy", tabProgreso: "Progreso",
-    cta: "¿Quieres un plan personalizado?", ctaGo: "Trabaja conmigo →",
+    cta: "Acompañamiento próximamente.", ctaGo: "Me interesa el acompañamiento →",
     heroKicker: "App gratis · Principiantes", hello: "¡Hola! Soy", heroP: "Si estás empezando a entrenar o eres nuevo en el mundo del fitness y no sabes por dónde arrancar, esta app es para ti. Sin complicaciones: entrena de 3 a 5 días a la semana dependiendo de tu disponibilidad, come mejor y mira tu progreso.",
     mindKicker: "Mentalidad del día", mindBy: "— Balmore",
     retoBKicker: "Reto con Balmore", retoBTeaser: "Mi meta: perder grasa corporal, ganar más músculo y bajar de 250 a 200–210 lb (40 a 50 libras), entrenando de lunes a viernes y comiendo 2,400 calorías al día. Mira mi peso real, semana a semana.", retoBGo: "Ver mi reto →",
@@ -443,14 +444,14 @@ const I18N = {
     rule3t: "Descansa y muévete", rule3: "Duerme 7–8 horas y camina todos los días. Tu cuerpo cambia cuando descansas.",
     howKicker: "¿Cómo usar la app?",
     step1t: "1. Calcula", step1: "Tus calorías y proteína", step2t: "2. Entrena", step2: "3 o 5 días, o exprés", step3t: "3. Marca tu día", step3: "Hábitos y reto de 30 días", step4t: "4. Pésate", step4: "1 vez por semana",
-    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Déjame tus datos y te mando el plan con tips para empezar con todo.",
+    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Abre tu guía de 4 semanas inmediatamente aquí en la app. Tus datos permiten que Balmore responda a tu solicitud; el envío por correo no está automatizado ni confirmado. También puedes usar Rutina gratis sin registrarte.",
     leadName: "Nombre", leadEmail: "Correo", leadWa: "WhatsApp", leadGoal: "Tu objetivo", leadSend: "Quiero mi plan gratis",
     goalFat: "Bajar grasa", goalMuscle: "Ganar músculo", goalBetter: "Sentirme mejor",
-    leadNeed: "Escribe al menos tu nombre, correo o WhatsApp.", leadSending: "Enviando…",
-    leadThanks: "¡Gracias{name}! 🙌", leadThanksP: "Recibí tus datos. Pronto te llega tu plan de 4 semanas.", leadAgain: "Enviar otros datos", leadWaMsg: "Te llevo a WhatsApp para enviarte el plan.",
-    leadPrivacy: "Tus datos son privados. Solo los usamos para enviarte tu plan y consejos de Balmore. Nunca los compartimos. Puedes darte de baja cuando quieras.",
+    leadNeed: "Escribe tu nombre y un correo válido o WhatsApp con código de país, y acepta el contacto sobre tu solicitud.", leadSending: "Enviando…",
+    leadThanks: "¡Gracias{name}! 🙌", leadThanksP: "Solicitud enviada desde tu navegador. Se intentó enviar tu solicitud, pero esta app no puede confirmar su recepción. Si no recibes respuesta, escríbeme por WhatsApp. Tu rutina gratuita está disponible ahora.", leadAgain: "Enviar otros datos", leadWaMsg: "Te llevo a WhatsApp para enviarte el plan.",
+    leadPrivacy: "Tus datos son privados. Se envían al servicio de formularios de Google para que Balmore pueda responder. No ingreses información médica. Tu progreso se guarda solo en este navegador. Puedes darte de baja cuando quieras.",
     faqTitle: "Preguntas <span class=\"hl\">frecuentes</span>",
-    moreTitle: "¿Quieres resultados <span class=\"hl\">más rápido</span>?", moreP: "Te armo un plan hecho para ti: entrenamiento, alimentación y seguimiento.", moreBtn: "Trabaja conmigo →",
+    moreTitle: "¿Quieres más <span class=\"hl\">acompañamiento</span>?", moreP: "El acompañamiento de pago está en preparación. Cuéntame qué apoyo te gustaría recibir, sin compromiso.", moreBtn: "Me interesa el acompañamiento →",
     follow: "Sígueme",
     disc: "<b>Aviso de salud:</b> esta app es informativa y no reemplaza el consejo de un médico o profesional de la salud. Consulta a tu médico antes de empezar a entrenar o cambiar tu alimentación, sobre todo si tienes una condición de salud, una lesión o estás embarazada. Si sientes dolor, mareo o falta de aire, detente.",
     foot: "App gratis",
@@ -481,7 +482,7 @@ const I18N = {
     actQ: "¿Qué tan activo eres?", actHint: "Si trabajas de pie o caminas mucho, sube un nivel.",
     act1: "Sedentario (casi sin ejercicio)", act2: "Poco activo (ejercicio 1–3 días/sem)", act3: "Moderado (ejercicio 3–5 días/sem)", act4: "Activo (ejercicio 6–7 días/sem)", act5: "Muy activo (trabajo físico + ejercicio)",
     goal: "Tu meta", gBajar: "Bajar grasa", gMantener: "Mantener", gGanar: "Ganar músculo", calc: "Calcular",
-    errAge: "Escribe tu edad (entre 14 y 90 años).", errW: "Escribe tu peso correctamente.", errH: "Escribe tu estatura correctamente.",
+    errAge: "Escribe tu edad (entre 18 y 90 años; esta calculadora es para adultos).", errW: "Escribe tu peso correctamente.", errH: "Escribe tu estatura correctamente.",
     resKicker: "Tu meta diaria", kcalDay: "calorías al día", protG: "gramos de proteína",
     resBajar: "Para bajar grasa, come unas {k} calorías al día (unas {d} menos de las ~{t} que gastas) y al menos {p} g de proteína.",
     resMantener: "Para mantener tu peso, come unas {k} calorías al día, más o menos lo que gastas, con al menos {p} g de proteína.",
@@ -523,7 +524,7 @@ const I18N = {
   en: {
     tagline: "Master your body, mind and money.", langBtn: "ES", langAria: "Switch language to Spanish",
     tabInicio: "Home", tabRutina: "Workout", tabComida: "Food", tabHoy: "Today", tabProgreso: "Progress",
-    cta: "Want a personalized plan?", ctaGo: "Work with me →",
+    cta: "Support coming soon.", ctaGo: "Interested in future support →",
     heroKicker: "Free app · Beginners", hello: "Hi! I'm", heroP: "If you're new to training or fitness and don't know where to start, this app is for you. No complications: train 3 to 5 days a week depending on your schedule, eat better, and watch your progress.",
     mindKicker: "Today's mindset", mindBy: "— Balmore",
     retoBKicker: "Challenge with Balmore", retoBTeaser: "My goal: lose body fat, build more muscle, and go from 250 to 200–210 lb (40 to 50 pounds), training Monday to Friday and eating 2,400 calories a day. Follow my real weight, week by week.", retoBGo: "See my challenge →",
@@ -533,14 +534,14 @@ const I18N = {
     rule3t: "Rest and move", rule3: "Sleep 7–8 hours and walk every day. Your body changes while you rest.",
     howKicker: "How to use the app",
     step1t: "1. Calculate", step1: "Your calories and protein", step2t: "2. Train", step2: "3 or 5 days, or express", step3t: "3. Check off your day", step3: "Habits and 30-day challenge", step4t: "4. Weigh in", step4: "Once a week",
-    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Leave your info and I'll send you the plan with tips to start strong.",
+    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Open your 4-week guide immediately in the app. Your details let Balmore respond to your request; email delivery is not automated or confirmed. You can also use Routine for free without signing up.",
     leadName: "Name", leadEmail: "Email", leadWa: "WhatsApp", leadGoal: "Your goal", leadSend: "Send me my free plan",
     goalFat: "Lose fat", goalMuscle: "Build muscle", goalBetter: "Feel better",
-    leadNeed: "Enter at least your name, email, or WhatsApp.", leadSending: "Sending…",
-    leadThanks: "Thank you{name}! 🙌", leadThanksP: "I got your info. Your 4-week plan is on its way.", leadAgain: "Send different info", leadWaMsg: "Taking you to WhatsApp to send you the plan.",
-    leadPrivacy: "Your info stays private. We only use it to send your plan and tips from Balmore. We never share it. Unsubscribe anytime.",
+    leadNeed: "Enter your name and a valid email or WhatsApp with country code, and consent to contact about this request.", leadSending: "Sending…",
+    leadThanks: "Thank you{name}! 🙌", leadThanksP: "Your browser attempted to send your request; this app cannot confirm receipt. If you do not hear back, contact me on WhatsApp. Your free routine is available now.", leadAgain: "Send different info", leadWaMsg: "Taking you to WhatsApp to send you the plan.",
+    leadPrivacy: "Your info stays private. They are sent through Google’s form service so Balmore can respond. Do not enter medical information. Progress stays in this browser. Unsubscribe anytime.",
     faqTitle: "Frequently asked <span class=\"hl\">questions</span>",
-    moreTitle: "Want results <span class=\"hl\">faster</span>?", moreP: "I'll build a plan just for you: training, nutrition, and check-ins.", moreBtn: "Work with me →",
+    moreTitle: "Want more <span class=\"hl\">support</span>?", moreP: "Paid support is being prepared. Tell me what help you would like, without a commitment.", moreBtn: "Interested in future support →",
     follow: "Follow me",
     disc: "<b>Health notice:</b> this app is for information only and doesn't replace advice from a doctor or health professional. Check with your doctor before you start training or change your diet, especially if you have a health condition or an injury, or are pregnant. If you feel pain, dizziness, or shortness of breath, stop.",
     foot: "Free app",
@@ -569,7 +570,7 @@ const I18N = {
     actQ: "How active are you?", actHint: "If you work on your feet or walk a lot, go up one level.",
     act1: "Sedentary (little or no exercise)", act2: "Lightly active (exercise 1–3 days/wk)", act3: "Moderate (exercise 3–5 days/wk)", act4: "Active (exercise 6–7 days/wk)", act5: "Very active (physical job + exercise)",
     goal: "Your goal", gBajar: "Lose fat", gMantener: "Maintain", gGanar: "Build muscle", calc: "Calculate",
-    errAge: "Enter your age (14 to 90).", errW: "Enter a valid weight.", errH: "Enter a valid height.",
+    errAge: "Enter your age (18 to 90); this calculator is for adults.", errW: "Enter a valid weight.", errH: "Enter a valid height.",
     resKicker: "Your daily target", kcalDay: "calories a day", protG: "grams of protein",
     resBajar: "To lose fat, eat about {k} calories a day (about {d} less than the ~{t} you burn) and at least {p} g of protein.",
     resMantener: "To maintain your weight, eat about {k} calories a day, roughly what you burn, with at least {p} g of protein.",
@@ -793,9 +794,9 @@ const EX_TIP = {
 /* ---------- Progresión de 4 semanas ---------- */
 const WEEKS = [
   { sets: 0, reps: 0, min: 0, sec: 0, t: { es: "Técnica", en: "Technique" }, d: { es: "Aprende bien cada movimiento con un peso cómodo.", en: "Learn each movement well with a comfortable weight." } },
-  { sets: 0, reps: 2, min: 5, sec: 10, t: { es: "Más repeticiones", en: "More reps" }, d: { es: "Mismo peso, 2 repeticiones más por serie (o un poco más de tiempo).", en: "Same weight, 2 more reps per set (or a bit more time)." } },
-  { sets: 1, reps: 0, min: 5, sec: 10, t: { es: "Más series", en: "More sets" }, d: { es: "Una serie más en los 2 primeros ejercicios del día (en Exprés, una vuelta más) y sube un poquito el peso si la técnica está bien.", en: "One more set on the day's first 2 exercises (in Express, one more round), and add a little weight if your form is solid." } },
-  { sets: 1, reps: 2, min: 10, sec: 20, t: { es: "Supera tu marca", en: "Beat your best" }, d: { es: "Mantén esa serie extra y suma 2 repeticiones más. Al terminar, repite el ciclo con más peso.", en: "Keep that extra set and add 2 more reps. When you finish, repeat the cycle with more weight." } }
+  { sets: 0, reps: 2, min: 5, sec: 10, t: { es: "Más repeticiones", en: "More reps" }, d: { es: "Si completas las series con buena técnica, prueba 2 repeticiones más con el mismo peso (o un poco más de tiempo). Si no, repite la semana 1.", en: "If you complete the sets with good technique, try 2 more reps with the same weight (or a little more time). Otherwise repeat week 1." } },
+  { sets: 1, reps: 0, min: 5, sec: 10, t: { es: "Más series", en: "More sets" }, d: { es: "Si te recuperas bien, prueba una serie extra en los 2 primeros ejercicios (en Exprés, una vuelta más). Mantén el mismo peso; no tienes que aumentar todo a la vez.", en: "If recovery is good, try an extra set on the first 2 exercises (in Express, one more round). Keep the same weight; you do not need to increase everything at once." } },
+  { sets: 1, reps: 2, min: 10, sec: 20, t: { es: "Supera tu marca", en: "Beat your best" }, d: { es: "Si la técnica sigue cómoda, conserva la serie extra y prueba 2 repeticiones más. Si cuesta demasiado, repite la semana anterior. Al terminar, revisa tu progreso antes de aumentar el peso.", en: "If technique remains comfortable, keep the extra set and try 2 more reps. If it is too hard, repeat the previous week. Review your progress before adding weight next cycle." } }
 ];
 
 /* ---------- Reto de 30 días ---------- */
@@ -1321,6 +1322,7 @@ const DEF = {
   checks: {}, weights: [], pUnit: "lb", comSub: "calc", proSub: "mio",
   plate: { sex: "h", goal: "bajar", meal: "almuerzo" },
   r30: { start: "", done: {}, sel: 0 },
+  onboarded: false, reviews: {},
   lead: { sent: false, name: "" }
 };
 /* Mudanza de dirección: la página de app.balmorehernandez.com trae los datos guardados allá en #bhimport=<base64url>.
@@ -1399,7 +1401,7 @@ function render() {
   $("#brandTag").textContent = slogan();
   $("#langBtn").textContent = t("langBtn"); $("#langBtn").setAttribute("aria-label", t("langAria"));
   $("#tabs").innerHTML = TABS.map(([id, ic, k]) => `<button type="button" data-act="tab" data-tab="${id}" class="${S.tab === id ? "on" : ""}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[ic]}</svg>${t(k)}</button>`).join("");
-  $("#ctaBar").href = CONFIG.COACHING_URL;
+  $("#ctaBar").href = "#offers"; $("#ctaBar").dataset.act = "help";
   $("#ctaBar").innerHTML = `<span>${t("cta")} <em>${t("ctaGo").replace(/ /g, "&nbsp;")}</em></span>`;
   renderTab();
 }
@@ -1410,6 +1412,7 @@ function renderTab() {
   if (S.tab === "progreso" && S.proSub === "mio" && !$("#pDate").value) $("#pDate").value = todayKey();
 }
 function go(tab, sub) {
+  track("tab_view", { tab });
   S.tab = tab;
   if (sub && tab === "comida") S.comSub = sub;
   if (sub && tab === "progreso") S.proSub = sub;
@@ -1433,6 +1436,7 @@ function vInicio() {
   return `
   <div class="card hero"><div class="kicker">${t("heroKicker")}</div>
     <h2 id="heroTitle">${t("hello")} <span class="hl">${esc(CONFIG.BRAND_NAME.split(" ")[0])}</span></h2><p>${t("heroP")}</p></div>
+  ${onboardingCard()}
   ${mindCard()}
   <div class="card" id="retoTeaser"><div class="row" style="align-items:center;margin-bottom:8px"><div style="min-width:0"><div class="kicker">${t("retoBKicker")}</div>
     <h3 style="margin:0">${startW} → ${rb.GOAL_MIN}–${rb.GOAL_MAX} ${rb.UNIT}</h3></div>${lastPhoto ? retoImg(lastPhoto, "rthumb", t("bDay") + " " + retoDay(lastPhoto.date) + " · " + dFull(lastPhoto.date) + " · " + r1(lastPhoto.weight) + " " + rb.UNIT) : ""}</div>
@@ -1447,11 +1451,12 @@ function vInicio() {
       `<button class="step" data-act="go" data-tab="${tab}" data-sub="${sub}"><svg class="ico" viewBox="0 0 24 24">${ICON[ic]}</svg><b>${t("step" + n + "t")}</b><span>${t("step" + n)}</span></button>`).join("")}
   </div>
   <div style="height:12px"></div>
+  ${offerCard()}
   ${leadCard()}
   <div class="card" id="faq"><h3>${t("faqTitle")}</h3>
     ${FAQ.map(f => `<details class="faq"><summary>${esc(L(f.q))}</summary><p>${esc(L(f.a))}</p></details>`).join("")}</div>
   <div class="card"><h3>${t("moreTitle")}</h3><p class="muted" style="margin:0 0 12px">${t("moreP")}</p>
-    <a class="btn" id="ctaCard" href="${esc(CONFIG.COACHING_URL)}" target="_blank" rel="noopener">${t("moreBtn")}</a></div>
+    <a class="btn" id="ctaCard" href="#offers" data-act="help">${t("moreBtn")}</a></div>
   <div class="card"><h3>${t("follow")}</h3><div class="socials" id="socials">
     ${Object.entries(CONFIG.SOCIAL).map(([k, v]) => `<a href="${esc(v.url)}" target="_blank" rel="noopener" data-net="${k}"><svg class="ico" viewBox="0 0 24 24">${sicons[k] || sicons.instagram}</svg><span><b>${names[k] || k}</b><span>${esc(v.handle)}</span></span><i>→</i></a>`).join("")}
   </div></div>
@@ -1460,38 +1465,53 @@ function vInicio() {
 }
 
 /* ---------- Formulario de leads ---------- */
+function leadStatus() {
+  if (S.lead.status === "pending") return bi("Tu plan ya está disponible. Intentando enviar tu solicitud…", "Your plan is available. Trying to send your request…");
+  if (S.lead.status === "failed") return bi("Tu plan sigue disponible. No se pudo enviar tu solicitud; puedes contactar a Balmore por WhatsApp.", "Your plan is still available. Your request could not be sent; contact Balmore on WhatsApp.");
+  return bi("Tu plan está disponible aquí. La app no puede confirmar que Balmore recibió tus datos ni que se envió un correo.", "Your plan is available here. The app cannot confirm that Balmore received your details or that an email was sent.");
+}
 function leadCard() {
-  if (S.lead.sent) return `<div class="card lead" id="leadCard"><h3>${t("leadThanks", { name: S.lead.name ? ", " + esc(S.lead.name.split(" ")[0]) : "" })}</h3>
-    <p class="muted" style="margin:0 0 10px">${t("leadThanksP")}</p><button class="linkbtn" data-act="leadAgain">${t("leadAgain")}</button></div>`;
+  if (S.lead.sent) return `<div class="card lead" id="leadCard"><h3>${bi("Tu plan de 4 semanas está listo", "Your 4-week plan is ready")}</h3>
+    <p>${bi("Empieza hoy con la rutina que elegiste. Cambia entre S1, S2, S3 y S4 para ver cómo progresar; ajusta casa/gimnasio y días a tu disponibilidad. Es una guía general para principiantes, no un plan médico ni personalizado.", "Start today with your chosen routine. Switch between W1, W2, W3 and W4 for progression; adjust home/gym and days to your schedule. This is a general beginner guide, not a medical or personalized plan.")}</p>
+    <button class="btn" data-act="tab" data-tab="rutina">${bi("Abrir mi plan ahora →", "Open my plan now →")}</button>
+    <button class="linkbtn" data-act="tab" data-tab="comida">${bi("Ver guía de comida", "See food guide")}</button>
+    <p class="small muted" role="status">${leadStatus()}</p>
+    <a class="linkbtn" href="${esc(CONFIG.COACHING_URL)}" target="_blank" rel="noopener">${bi("¿Necesitas ayuda? WhatsApp →", "Need help? WhatsApp →")}</a>
+    <button class="linkbtn" data-act="leadAgain">${t("leadAgain")}</button></div>`;
   return `<form class="card lead" id="leadForm" novalidate>
     <h3>${t("leadTitle")}</h3><p class="muted" style="margin:0 0 14px">${t("leadP")}</p>
-    <div class="field"><label class="f" for="lNombre">${t("leadName")}</label><input class="inp" id="lNombre" name="nombre" autocomplete="name"></div>
-    <div class="field"><label class="f" for="lEmail">${t("leadEmail")}</label><input class="inp" id="lEmail" name="email" type="email" autocomplete="email" inputmode="email"></div>
-    <div class="field"><label class="f" for="lWa">${t("leadWa")}</label><input class="inp" id="lWa" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+503"></div>
+    <div class="field"><label class="f" for="lNombre">${t("leadName")}</label><input class="inp" id="lNombre" name="nombre" maxlength="100" autocomplete="name"></div>
+    <div class="field"><label class="f" for="lEmail">${t("leadEmail")}</label><input class="inp" id="lEmail" name="email" maxlength="254" type="email" autocomplete="email" inputmode="email"></div>
+    <div class="field"><label class="f" for="lWa">${t("leadWa")}</label><input class="inp" id="lWa" name="whatsapp" maxlength="30" type="tel" autocomplete="tel" inputmode="tel" placeholder="+503"></div>
     <div class="field"><label class="f" for="lObj">${t("leadGoal")}</label><select class="inp" id="lObj" name="objetivo">
       <option value="bajar grasa">${t("goalFat")}</option><option value="ganar músculo">${t("goalMuscle")}</option><option value="sentirme mejor">${t("goalBetter")}</option></select></div>
     <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-    <div class="err" id="leadErr" hidden></div>
+    <label class="small"><input type="checkbox" name="consent" required> ${bi("Acepto que Balmore me contacte sobre esta solicitud. No me suscribo a publicidad.", "I agree to contact about this request. This does not subscribe me to marketing.")}</label><div class="err" role="alert" id="leadErr" hidden></div>
     <button class="btn" type="submit" id="leadBtn">${t("leadSend")}</button>
     <p class="muted small" style="margin:10px 0 0;text-align:center">${t("leadPrivacy")}</p></form>`;
 }
-function leadFallback() { toast(t("leadWaMsg")); window.open(CONFIG.COACHING_URL, "_blank", "noopener"); }
 async function submitLead(form) {
   const fd = new FormData(form), g = k => String(fd.get(k) || "").trim(), err = $("#leadErr");
   if (g("website")) { S.lead = { sent: true, name: "" }; save(); renderTab(); return "honeypot"; } // bot: no se envía nada
   const nombre = g("nombre"), email = g("email"), whatsapp = g("whatsapp");
-  if (!nombre && !email && !whatsapp) { err.textContent = t("leadNeed"); err.hidden = false; return "invalid"; }
-  err.hidden = true;
-  const body = new URLSearchParams({ nombre, email, whatsapp, objetivo: g("objetivo"), idioma: S.lang, fuente: "app-plan-4-semanas" });
-  const url = String(CONFIG.LEAD_FORM_URL || "").trim();
-  if (!url) { leadFallback(); return "whatsapp"; }
-  const btn = $("#leadBtn"); btn.disabled = true; btn.textContent = t("leadSending");
-  try {
-    await fetch(url, { method: "POST", mode: "no-cors", body }); // respuesta opaca: si no lanza error, se considera enviado
-    S.lead = { sent: true, name: nombre }; save(); renderTab(); return "sent";
-  } catch (e) {
-    btn.disabled = false; btn.textContent = t("leadSend"); leadFallback(); return "whatsapp";
+  if (!nombre || (!email && !whatsapp)) { err.textContent = t("leadNeed"); err.hidden = false; return "invalid"; }
+  if ((email && !form.elements.email.checkValidity()) || (whatsapp && !/^\+[1-9]\d{7,14}$/.test(whatsapp.replace(/[\s()-]/g, ""))) || !fd.get("consent")) {
+    err.textContent = t("leadNeed"); err.hidden = false; err.setAttribute("role", "alert"); return "invalid";
   }
+  err.hidden = true;
+  track("lead_attempt");
+  const body = new URLSearchParams({ nombre, email, whatsapp, objetivo: g("objetivo"), idioma: S.lang, fuente: "app-plan-4-semanas", consentimiento: "contacto-solicitud", consentimiento_fecha: new Date().toISOString() });
+  const url = String(CONFIG.LEAD_FORM_URL || "").trim();
+  S.lead = { sent: true, name: "", status: url ? "pending" : "failed" };
+  save(); renderTab(); track("plan_available");
+  if (!url) return "available";
+  try {
+    await fetch(url, { method: "POST", mode: "no-cors", body, signal: AbortSignal.timeout(12000) });
+    S.lead.status = "unverified"; track("lead_unverified");
+  } catch (e) { S.lead.status = "failed"; track("lead_failed"); }
+  save(); if (S.tab === "inicio") renderTab();
+  return "available";
+
 }
 document.addEventListener("submit", e => { if (e.target.id === "leadForm") { e.preventDefault(); submitLead(e.target); } });
 
@@ -1518,6 +1538,7 @@ function vRutina() {
   const sugg = Math.min(4, Math.floor(since / 7) + 1), list = dayEx();
   return `
   <div class="kicker">${t("rutKicker")}</div><h2>${t("rutTitle")}</h2>
+  <div class="note"><p>${bi("Guía general para adultos que empiezan. Las semanas son propuestas, no una obligación: repite la anterior si necesitas más práctica o descanso. Calienta con movimientos suaves y series ligeras; descansa más si lo necesitas. Si aparece dolor, mareo o falta de aire, detente y consulta a un profesional. Las 2,400 calorías del reto de Balmore son su meta personal, no la tuya.", "General guide for adults starting out. Weeks are suggestions, not requirements: repeat the previous one when you need more practice or recovery. Warm up with gentle movement and light sets; take longer rests when needed. Stop and seek professional advice for pain, dizziness or shortness of breath. Balmore’s 2,400-calorie challenge is his personal target, not yours.")}</p></div>
   <div class="note" id="rutNote"><p>${t("rutNote1")}</p><p>${t("rutNote2")}</p></div>
   ${seg("mode", [{ v: "gym", l: ICON.gym + t("gym") }, { v: "casa", l: ICON.casa + t("casa") }], S.mode, "")}
   <div id="freqSeg">${seg("freq", [{ v: "3", l: t("f3") }, { v: "5", l: t("f5") }, { v: "x", l: ICON.bolt + t("fx") }], S.freq)}</div>
@@ -1576,7 +1597,7 @@ function vCalc() {
   return `<p class="sub">${t("calcIntro")}</p>
   <div class="card">
     <div class="field"><label class="f">${t("sex")}</label>${seg("cSex", [{ v: "h", l: t("man") }, { v: "m", l: t("woman") }], C2.sex, "m0")}</div>
-    <div class="field"><label class="f" for="age">${t("age")}</label><input class="inp" id="age" data-calc="age" type="number" inputmode="numeric" min="14" max="90" placeholder="${t("agePh")}" value="${esc(C2.age)}"></div>
+    <div class="field"><label class="f" for="age">${t("age")}</label><input class="inp" id="age" data-calc="age" type="number" inputmode="numeric" min="18" max="90" placeholder="${t("agePh")}" value="${esc(C2.age)}"></div>
     <div class="field"><label class="f" for="weight">${t("weight")}</label><div class="unitwrap"><input class="inp" id="weight" data-calc="w" type="number" inputmode="decimal" step="0.1" placeholder="180" value="${esc(C2.w)}">
       <div id="wUnitSeg">${seg("cWU", [{ v: "lb", l: "lb" }, { v: "kg", l: "kg" }], C2.wUnit, "m0")}</div></div></div>
     <div class="field"><label class="f">${t("height")}</label><div class="unitwrap">
@@ -1615,7 +1636,7 @@ function doCalc() {
   const C2 = S.calc, err = m => { $("#calcErr").textContent = m; $("#calcErr").hidden = !m; };
   const age = +C2.age, w = +C2.w, kg = C2.wUnit === "kg" ? w : w / 2.20462;
   const cm = C2.hUnit === "cm" ? +C2.hcm : ((+C2.hft || 0) * 12 + (+C2.hin || 0)) * 2.54;
-  if (!age || age < 14 || age > 90) return err(t("errAge"));
+  if (!age || age < 18 || age > 90) return err(t("errAge"));
   if (!w || kg < 35 || kg > 300) return err(t("errW"));
   if (!cm || cm < 120 || cm > 230) return err(t("errH"));
   C2.result = calculate({ sex: C2.sex, age, kg, cm, act: +C2.act, goal: C2.goal }); save(); renderTab();
@@ -1778,7 +1799,8 @@ const toUnit = kg => (S.pUnit === "kg" ? kg : kg * 2.20462);
 function vProgreso() {
   return `<div class="kicker">${t("proKicker")}</div><h2>${t("proTitle")}</h2>
   <div id="proSub">${seg("proSub", [{ v: "mio", l: t("proMine") }, { v: "balmore", l: t("proBalmore") }], S.proSub)}</div>
-  ${S.proSub === "balmore" ? vBalmore() : vMio()}`;
+  ${S.proSub === "balmore" ? vBalmore() : vMio()}
+  ${weeklyCard()}`;
 }
 function vMio() {
   const W = [...S.weights].sort((a, b) => a.d.localeCompare(b.d)), u = S.pUnit;
@@ -1844,6 +1866,7 @@ function chart(P, opt = {}) {
 
 /* ---------- Acciones ---------- */
 const ACT = {
+  help: () => { go("inicio"); $("#offers").scrollIntoView({ behavior: "smooth", block: "start" }); track("support_interest"); },
   lang: () => { S.lang = S.lang === "es" ? "en" : "es"; save(); render(); },
   tab: el => go(el.dataset.tab),
   go: el => go(el.dataset.tab, el.dataset.sub),
@@ -1882,6 +1905,48 @@ const ACT = {
   leadAgain: () => { S.lead = { sent: false, name: "" }; save(); renderTab(); }
 };
 document.addEventListener("click", e => { const el = e.target.closest("[data-act]"); if (el && ACT[el.dataset.act]) { if (el.tagName === "BUTTON" && el.type !== "submit") e.preventDefault(); ACT[el.dataset.act](el, e); } });
+
+
+/* 2026-10-07 — ChatGPT: value-first onboarding, qualification and accountability. */
+const bi = (es, en) => S.lang === "en" ? en : es;
+function track(event, details = {}) {
+  const payload = { event: "fitness_" + event, language: S.lang, ...details };
+  window.dispatchEvent(new CustomEvent("fitness:analytics", { detail: payload }));
+  // Optional adapter; no provider, cookies, contact fields or health data are sent by default.
+}
+function onboardingCard() {
+  return `<form class="card" id="startForm"><h3>${bi(S.onboarded ? "Tu punto de partida" : "Empieza en 1 minuto", S.onboarded ? "Your starting point" : "Start in 1 minute")}</h3>
+  <p>${bi("Usa todas las herramientas gratis, sin dejar tus datos. Elige dónde y cuánto tiempo puedes entrenar.", "Use every tool for free without sharing contact details. Choose where and how often you can train.")}</p>
+  <label for="startMode">${bi("Dónde", "Where")}</label><select class="inp" id="startMode" name="mode"><option value="gym" ${S.mode==='gym'?'selected':''}>${bi("Gimnasio", "Gym")}</option><option value="casa" ${S.mode==='casa'?'selected':''}>${bi("En casa", "At home")}</option></select>
+  <label for="startFreq">${bi("Días por semana", "Days per week")}</label><select class="inp" id="startFreq" name="freq">${[['3',bi('3 días · para empezar','3 days · beginner')],['5',bi('5 días','5 days')],['x',bi('Exprés · 20–30 min','Express · 20–30 min')]].map(([v,l])=>`<option value="${v}" ${S.freq===v?'selected':''}>${l}</option>`).join('')}</select>
+  <button class="btn" type="submit">${bi("Abrir mi rutina gratis →", "Open my free routine →")}</button>
+  <p class="small muted">${bi("Siguiente: revisa Comida, marca tus hábitos en Hoy y vuelve cada semana a Progreso. Los datos quedan en este navegador; borrar sus datos elimina el progreso.", "Next: explore Food, check habits in Today and return to Progress weekly. Data stays in this browser; clearing browser data removes progress.")}</p></form>`;
+}
+function offerCard() {
+  return `<div class="card" id="offers"><h3>${bi("Elige el apoyo que necesitas", "Choose your support")}</h3>
+  <p><b>${bi("App gratuita · $0", "Free app · $0")}</b><br>${bi("Rutinas, guía de comida, hábitos y progreso. Disponible ahora, sin registro.", "Routines, food guide, habits and progress. Available now, no signup.")}</p>
+  <p><b>${bi("Acompañamiento con Balmore · próximamente", "Support with Balmore · coming soon")}</b><br>${bi("Hoy las herramientas son gratis. El servicio de acompañamiento de pago aún no está disponible; precio y alcance están por definir. Puedes expresar interés por WhatsApp, sin compromiso ni cobro.", "Today the tools are free. Paid support is not available yet; price and scope are undecided. Express interest on WhatsApp without a commitment or payment.")}</p>
+  <form id="helpForm"><label for="helpGoal">${bi("Mi objetivo", "My goal")}</label><select class="inp" id="helpGoal" name="goal">${[bi('Crear constancia','Build consistency'),bi('Bajar grasa','Lose fat'),bi('Ganar fuerza','Build strength')].map(v=>`<option>${v}</option>`).join('')}</select>
+  <label for="helpDays">${bi("Disponibilidad", "Availability")}</label><select class="inp" id="helpDays" name="days"><option>3 ${bi('días','days')}</option><option>5 ${bi('días','days')}</option><option>${bi('Aún no sé','Not sure yet')}</option></select>
+  <label for="helpSupport">${bi("Lo que busco", "What I need")}</label><select class="inp" id="helpSupport" name="support"><option>${bi('Hábitos y seguimiento','Habits and accountability')}</option><option>${bi('Información sobre un plan personalizado','Information about a personal plan')}</option></select>
+  <p class="small muted">${bi("Verás el mensaje antes de enviarlo en WhatsApp. No incluyas diagnósticos ni información médica.", "Review the message in WhatsApp before sending. Do not include diagnoses or medical information.")}</p>
+  <button class="btn" type="submit">${bi("Preparar mensaje de WhatsApp →", "Prepare WhatsApp message →")}</button><div id="helpResult" aria-live="polite"></div></form></div>`;
+}
+function weeklyCard() {
+  const dates = Array.from({length:7},(_,i)=>todayKey(shift(new Date(),i-6)));
+  const active = dates.filter(d=>Object.values(S.checks[d]||{}).some(Boolean)).length;
+  const note = S.reviews[todayKey()] || "";
+  const lastDate = Object.keys(S.reviews).filter(d=>d<todayKey()).sort().pop();
+  return `<form class="card" id="reviewForm"><h3>${bi("Mi revisión semanal", "My weekly review")}</h3><p>${bi(`Registraste hábitos en ${active} de los últimos 7 días. El peso es solo una parte del progreso.`, `You logged habits on ${active} of the last 7 days. Weight is only one part of progress.`)}</p>
+  ${lastDate ? `<p class="small"><b>${dFull(lastDate)}</b>: ${esc(S.reviews[lastDate])}</p>` : ""}<label for="reviewNote">${bi("¿Qué funcionó y qué pequeña acción repetirás esta semana?", "What worked, and what small action will you repeat this week?")}</label><textarea class="inp" id="reviewNote" name="note" maxlength="500">${esc(note)}</textarea><button class="btn" type="submit">${bi("Guardar en este navegador", "Save in this browser")}</button><p class="muted small">${bi("No se envía a Balmore. Evita información médica. Revisa energía, fuerza y constancia; no necesitas pesarte para usar la app.", "Not sent to Balmore. Avoid medical information. Review energy, strength and consistency; weighing yourself is optional.")}</p></form>`;
+}
+document.addEventListener("submit", e => {
+  if(e.target.id === "startForm") { e.preventDefault(); const f=new FormData(e.target); S.mode=f.get('mode'); S.freq=f.get('freq'); S.day=0; S.onboarded=true; track('onboarding_complete'); go('rutina'); }
+  if(e.target.id === "reviewForm") { e.preventDefault(); S.reviews[todayKey()]=new FormData(e.target).get('note'); save(); toast(bi('Revisión guardada','Review saved')); track('review_saved'); }
+  if(e.target.id === "helpForm") { e.preventDefault(); const f=new FormData(e.target); const msg=bi('Hola Balmore, vengo de tu app fitness.','Hi Balmore, I came from your fitness app.')+` ${bi('Objetivo','Goal')}: ${f.get('goal')}. ${bi('Disponibilidad','Availability')}: ${f.get('days')}. ${bi('Busco','Looking for')}: ${f.get('support')}. `+bi('Me interesa saber cuando el acompañamiento esté disponible.','I am interested in hearing when support becomes available.');
+    const url=new URL(CONFIG.COACHING_URL); url.searchParams.set('text',msg); $('#helpResult').innerHTML=`<p>${esc(msg)}</p><a class="btn" href="${esc(url.href)}" target="_blank" rel="noopener">${bi('Abrir WhatsApp','Open WhatsApp')} →</a>`; track('qualification_complete'); }
+});
+document.addEventListener('click', e=> {const a=e.target.closest('a'); if(a && a.href.startsWith('https://wa.me/')) track('whatsapp_click');});
 
 render();
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
