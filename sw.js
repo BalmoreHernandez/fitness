@@ -2,7 +2,7 @@
 // Rutas relativas: funciona en la raíz de un dominio o en una subcarpeta (balmorehernandez.com/fitness/).
 // Solo borra cachés con su propio prefijo: otras apps del mismo dominio (p. ej. /presupuesto/) guardan las suyas.
 const PREFIX = "fitness-principiantes-";
-const CACHE = PREFIX + "v15";
+const CACHE = PREFIX + "v16";
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "./index.html"]))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(PREFIX) && k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });
 self.addEventListener("fetch", e => {
