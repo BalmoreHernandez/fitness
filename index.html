@@ -2052,6 +2052,8 @@ document.addEventListener("submit", e => {
 });
 document.addEventListener('click', e=> {const a=e.target.closest('a'); if(a && a.href.startsWith('https://wa.me/')) { track('whatsapp_click'); if(a.hasAttribute('data-followup-whatsapp')) { const r=(S.followups||{})[cycleSummary().start]; if(r) {r.whatsappOpened=true;save();} track('followup_whatsapp_opened'); } }});
 
+// The day-28 email opens the personal progress/review screen.
+if (location.hash === "#progreso") { S.tab = "progreso"; S.proSub = "mio"; }
 render();
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
 
