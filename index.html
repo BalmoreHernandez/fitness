@@ -444,12 +444,12 @@ const I18N = {
     rule3t: "Descansa y muévete", rule3: "Duerme 7–8 horas y camina todos los días. Tu cuerpo cambia cuando descansas.",
     howKicker: "¿Cómo usar la app?",
     step1t: "1. Calcula", step1: "Tus calorías y proteína", step2t: "2. Entrena", step2: "Cuerpo completo y recuperación", step3t: "3. Marca tu día", step3: "Hábitos y reto de 30 días", step4t: "4. Pésate", step4: "1 vez por semana",
-    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Abre tu guía de 4 semanas inmediatamente aquí. Si dejas tu correo, el sistema intentará enviarte el enlace automáticamente; revisa también spam. Puedes usar Rutina gratis sin registrarte.",
+    leadTitle: "Recibe tu plan de <span class=\"hl\">4 semanas</span> gratis", leadP: "Abre tu guía de 4 semanas inmediatamente aquí. Si dejas tu correo, el sistema intentará enviarte el enlace y el PDF ilustrado automáticamente; revisa también spam. Puedes usar Rutina gratis sin registrarte.",
     leadName: "Nombre", leadEmail: "Correo", leadWa: "WhatsApp", leadGoal: "Tu objetivo", leadSend: "Quiero mi plan gratis",
     goalFat: "Bajar grasa", goalMuscle: "Ganar músculo", goalBetter: "Sentirme mejor",
     leadNeed: "Escribe tu nombre y un correo válido o WhatsApp con código de país, y acepta el contacto sobre tu solicitud.", leadSending: "Enviando…",
     leadThanks: "¡Gracias{name}! 🙌", leadThanksP: "Solicitud enviada desde tu navegador. Se intentó enviar tu solicitud, pero esta app no puede confirmar su recepción. Si no recibes respuesta, escríbeme por WhatsApp. Tu rutina gratuita está disponible ahora.", leadAgain: "Enviar otros datos", leadWaMsg: "Te llevo a WhatsApp para enviarte el plan.",
-    leadPrivacy: "Tu nombre, contacto y objetivo se guardan en Google y en el registro privado de Notion para entregar el plan y responder a tu solicitud. No ingreses información médica. Tu progreso queda solo en este navegador. No te suscribes a publicidad; puedes pedir que se eliminen tus datos.",
+    leadPrivacy: "Tu nombre, contacto y objetivo se guardan en Google y en el registro privado de Notion para entregar el plan, responder a tu solicitud y enviar un único chequeo de día 28 si lo eliges. No ingreses información médica. Tu progreso queda solo en este navegador. No te suscribes a publicidad; puedes pedir que se eliminen tus datos.",
     faqTitle: "Preguntas <span class=\"hl\">frecuentes</span>",
     moreTitle: "¿Quieres más <span class=\"hl\">acompañamiento</span>?", moreP: "El acompañamiento de pago está en preparación. Cuéntame qué apoyo te gustaría recibir, sin compromiso.", moreBtn: "Me interesa el acompañamiento →",
     follow: "Sígueme",
@@ -534,12 +534,12 @@ const I18N = {
     rule3t: "Rest and move", rule3: "Sleep 7–8 hours and walk every day. Your body changes while you rest.",
     howKicker: "How to use the app",
     step1t: "1. Calculate", step1: "Your calories and protein", step2t: "2. Train", step2: "Full body and recovery", step3t: "3. Check off your day", step3: "Habits and 30-day challenge", step4t: "4. Weigh in", step4: "Once a week",
-    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Open your 4-week guide immediately here. If you provide an email, the system will try to send the link automatically; check spam too. You can use Routine for free without signing up.",
+    leadTitle: "Get your free <span class=\"hl\">4-week</span> plan", leadP: "Open your 4-week guide immediately here. If you provide an email, the system will try to send the link and illustrated Spanish PDF automatically; check spam too. You can use Routine for free without signing up.",
     leadName: "Name", leadEmail: "Email", leadWa: "WhatsApp", leadGoal: "Your goal", leadSend: "Send me my free plan",
     goalFat: "Lose fat", goalMuscle: "Build muscle", goalBetter: "Feel better",
     leadNeed: "Enter your name and a valid email or WhatsApp with country code, and consent to contact about this request.", leadSending: "Sending…",
     leadThanks: "Thank you{name}! 🙌", leadThanksP: "Your browser attempted to send your request; this app cannot confirm receipt. If you do not hear back, contact me on WhatsApp. Your free routine is available now.", leadAgain: "Send different info", leadWaMsg: "Taking you to WhatsApp to send you the plan.",
-    leadPrivacy: "Your name, contact and goal are stored in Google and the private Notion registry to deliver the plan and respond to your request. Do not enter medical information. Progress stays in this browser. You are not subscribed to marketing; you can request deletion of your details.",
+    leadPrivacy: "Your name, contact and goal are stored in Google and the private Notion registry to deliver the plan, respond to your request and send one day-28 check-in if you choose it. Do not enter medical information. Progress stays in this browser. You are not subscribed to marketing; you can request deletion of your details.",
     faqTitle: "Frequently asked <span class=\"hl\">questions</span>",
     moreTitle: "Want more <span class=\"hl\">support</span>?", moreP: "Paid support is being prepared. Tell me what help you would like, without a commitment.", moreBtn: "Interested in future support →",
     follow: "Follow me",
@@ -1490,7 +1490,7 @@ function vInicio() {
 function leadStatus() {
   if (S.lead.status === "pending") return bi("Tu plan ya está disponible. Intentando enviar tu solicitud…", "Your plan is available. Trying to send your request…");
   if (S.lead.status === "failed") return bi("Tu plan sigue disponible. No se pudo enviar tu solicitud; puedes contactar a Balmore por WhatsApp.", "Your plan is still available. Your request could not be sent; contact Balmore on WhatsApp.");
-  return bi("Tu plan está disponible aquí. Si dejaste correo, revisa tu bandeja y spam para el enlace automático. La app no puede confirmar la entrega; si no llega, contacta a Balmore por WhatsApp.", "Your plan is available here. If you provided email, check your inbox and spam for the automatic link. The app cannot confirm delivery; contact Balmore on WhatsApp if it does not arrive.");
+  return bi("Tu plan está disponible aquí. Si dejaste correo, revisa tu bandeja y spam para el enlace y PDF automáticos. La app no puede confirmar la entrega; si no llega, contacta a Balmore por WhatsApp.", "Your plan is available here. If you provided email, check your inbox and spam for the automatic link and Spanish PDF. The app cannot confirm delivery; contact Balmore on WhatsApp if it does not arrive.");
 }
 function leadCard() {
   if (S.lead.sent) return `<div class="card lead" id="leadCard"><h3>${bi("Tu plan de 4 semanas está listo", "Your 4-week plan is ready")}</h3>
@@ -1508,7 +1508,7 @@ function leadCard() {
     <div class="field"><label class="f" for="lObj">${t("leadGoal")}</label><select class="inp" id="lObj" name="objetivo">
       <option value="bajar grasa">${t("goalFat")}</option><option value="ganar músculo">${t("goalMuscle")}</option><option value="sentirme mejor">${t("goalBetter")}</option></select></div>
     <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
-    <label class="small"><input type="checkbox" name="consent" required> ${bi("Acepto que Balmore me contacte sobre esta solicitud. No me suscribo a publicidad.", "I agree to contact about this request. This does not subscribe me to marketing.")}</label><div class="err" role="alert" id="leadErr" hidden></div>
+    <label class="small"><input type="checkbox" name="consent" required> ${bi("Acepto que Balmore me contacte sobre esta solicitud. No me suscribo a publicidad.", "I agree to contact about this request. This does not subscribe me to marketing.")}</label><label class="small" style="display:block;margin:12px 0"><input type="checkbox" name="reminder"> ${bi("Opcional: quiero un único correo de chequeo alrededor del día 28. Requiere email; puedo cancelarlo contactando a Balmore.", "Optional: send me one check-in email around day 28. Email required; I can cancel by contacting Balmore.")}</label><div class="err" role="alert" id="leadErr" hidden></div>
     <button class="btn" type="submit" id="leadBtn">${t("leadSend")}</button>
     <p class="muted small" style="margin:10px 0 0;text-align:center">${t("leadPrivacy")}</p></form>`;
 }
@@ -1520,9 +1520,10 @@ async function submitLead(form) {
   if ((email && !form.elements.email.checkValidity()) || (whatsapp && !/^\+[1-9]\d{7,14}$/.test(whatsapp.replace(/[\s()-]/g, ""))) || !fd.get("consent")) {
     err.textContent = t("leadNeed"); err.hidden = false; err.setAttribute("role", "alert"); return "invalid";
   }
+  if (fd.get("reminder") && !email) { err.textContent = bi("Añade tu email para recibir el chequeo opcional, o desmarca esa opción.", "Add your email for the optional check-in, or uncheck that option."); err.hidden = false; return "invalid"; }
   err.hidden = true;
   track("lead_attempt");
-  const body = new URLSearchParams({ nombre, email, whatsapp, objetivo: g("objetivo"), idioma: S.lang, fuente: "app-plan-4-semanas", consentimiento: "contacto-solicitud", consentimiento_fecha: new Date().toISOString() });
+  const body = new URLSearchParams({ nombre, email, whatsapp, objetivo: g("objetivo"), idioma: S.lang, fuente: "app-plan-4-semanas", consentimiento: "contacto-solicitud", recordatorio: fd.get("reminder") ? "recordatorio-28-dias-v1" : "", consentimiento_fecha: new Date().toISOString() });
   const url = String(CONFIG.LEAD_FORM_URL || "").trim();
   S.lead = { sent: true, name: "", status: url ? "pending" : "failed" };
   save(); renderTab(); track("plan_available");
