@@ -61,3 +61,11 @@ Archivo principal: `index.html`. Es autocontenido y funciona sin internet; la ú
 - Probados en vivo signup y seguimiento: ambos emails llegaron al inbox de Balmore, y un solo registro Notion contiene ambas solicitudes.
 - Credencial solo en Script Properties del proyecto original. App informa sobre Google y Notion; el progreso privado permanece en el navegador.
 - Código de respaldo y pruebas en la rama local improve-free-fitness-journey, carpeta backend. Límite inicial: 30 solicitudes por día UTC; revisar capacidad antes de ampliar promoción.
+
+## PDF y chequeo opcional — 8 de octubre de 2026
+
+El backend original está desplegado en versión 3. El correo de alta adjunta el PDF ilustrado revisado de 22 páginas (en español; el correo inglés lo aclara) y conserva el enlace de la app. Una casilla opcional, desmarcada por defecto, permite un solo chequeo alrededor del día 28. Requiere email y registra consentimiento separado. Los registros anteriores no se incluyen.
+
+El trigger original usa sendDueReminders, Version 3, una vez al día entre 08:00 y 09:00 GMT-06:00. Reserva 20 destinatarios de cuota, no reenvía tras resultados inciertos, caduca pendientes con más de 7 días de demora y evita recordatorios de ciclos sustituidos o con seguimiento posterior. Los estados Cliente/No interesado de Notion bloquean el envío. La entrega se registra en Google y se añade al mismo registro privado de Notion sin alterar su estado comercial.
+
+El enlace de cancelación requiere confirmación POST; leer un enlace no cambia preferencias. También puede solicitarse la cancelación a Balmore, quien marca Estado recordatorio como cancelado. El email de chequeo abre #progreso y no afirma que el usuario haya terminado ni activa ventas o promociones recurrentes. El acompañamiento sigue próximo, sujeto a alcance y precio acordados.
