@@ -31,6 +31,15 @@
   --fh:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --fb:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   color-scheme:light;
+  /* premium-unify: copia de hub-site/shared/bh-tokens.css (no se enlaza: app autocontenida) */
+  --bh-navy:#0E1A2E; --bh-navy-2:#17263F; --bh-burgundy:#A3263A; --bh-burgundy-h:#8C1F31;
+  --bh-cream:#F6F1E9; --bh-white:#FFFFFF; --bh-bronze:#7E5F28; --bh-gray:#566074; --bh-line:#E4DCCF; --bh-error:#B42318;
+  --bh-on-navy-2:#D9D2C6; --bh-on-navy-3:#C9BFB0; --bh-rose-on-navy:#F2A5B2;
+  --bh-tint-burgundy:#F7E8EB; --bh-tint-bronze:#F3E9D8; --bh-ok:#1E5B2E; --bh-tint-ok:#E9F1EA; --bh-tint-error:#FDECEC; --bh-field-border:#CFC5B4;
+  --bh-radius:22px; --bh-radius-sm:14px; --bh-radius-pill:999px; --bh-radius-hero:34px;
+  --bh-shadow-1:0 1px 0 rgba(14,26,46,.03),0 10px 30px -18px rgba(14,26,46,.25);
+  --bh-shadow-2:0 2px 0 rgba(14,26,46,.03),0 22px 44px -22px rgba(14,26,46,.35);
+  --bh-tap:48px; --bh-btn-h:52px;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
@@ -38,7 +47,7 @@ html{background:var(--bg)}
 body{font-family:var(--fb);font-weight:400;background:var(--bg);color:var(--text);font-size:16px;line-height:1.5;
   padding-bottom:calc(var(--tabh) + var(--ctah) + 20px + env(safe-area-inset-bottom))}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(70% 45% at 100% 0%,rgba(64,108,190,.08),transparent 70%),radial-gradient(60% 40% at 0% 100%,rgba(163,38,58,.06),transparent 70%)}
+  background:radial-gradient(70% 45% at 100% 0%,rgba(163,38,58,.06),transparent 70%),radial-gradient(60% 40% at 0% 100%,rgba(126,95,40,.07),transparent 70%)}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 b,strong{font-weight:600}
@@ -59,7 +68,8 @@ h2{font-family:var(--fh);font-weight:900;font-size:30px;line-height:1.04;letter-
 .hl{color:var(--accent)}
 h3{font-family:var(--fh);font-weight:800;font-size:18px;line-height:1.2;letter-spacing:-.01em;margin:0 0 8px}
 .sub{color:var(--muted);margin:0 2px 16px}
-.card{background:var(--card);border:2px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px}
+.btn.ghost:hover{background:var(--bh-tint-burgundy)}
+.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--bh-shadow-1);border-radius:var(--radius);padding:18px;margin-bottom:14px}
 .hero{padding:22px 20px}
 .hero h2{font-size:32px;margin:0 0 10px}
 .hero p{margin:0;color:var(--text)}
@@ -74,10 +84,11 @@ h3{font-family:var(--fh);font-weight:800;font-size:18px;line-height:1.2;letter-s
 .step b{display:block;font-family:var(--fh);font-weight:800;font-size:15px}
 .step span{font-size:13px;color:var(--muted)}
 .ico{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.btn{display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 16px;line-height:1.25;gap:8px;width:100%;min-height:56px;border:none;border-radius:16px;
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 16px;line-height:1.25;gap:8px;width:100%;min-height:56px;border:none;border-radius:var(--bh-radius-pill);transition:background-color .15s,transform .15s;
   background:var(--accent-fill);color:var(--on-accent);font-family:var(--fh);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.btn:hover{background:var(--bh-burgundy-h)}
 .btn:active{transform:scale(.98)}
-.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);text-transform:none;letter-spacing:0;font-size:15.5px}
+.btn.ghost{border-radius:var(--bh-radius-pill);background:transparent;color:var(--accent);border:2px solid var(--accent);text-transform:none;letter-spacing:0;font-size:15.5px}
 .seg{display:flex;background:var(--bg);border:2px solid var(--line);border-radius:16px;padding:4px;gap:4px;margin-bottom:12px}
 .seg button{flex:1;min-height:46px;border:none;border-radius:12px;background:transparent;font-family:var(--fb);font-weight:600;color:var(--muted);line-height:1.15;padding:4px 6px;font-size:15.5px;display:flex;align-items:center;justify-content:center;gap:8px}
 .seg button svg{width:20px;height:20px}
