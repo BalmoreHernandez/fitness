@@ -12,10 +12,9 @@ App de Balmore Hernandez (@BalmoreHernandez.sv) para principiantes, en español 
 Archivo principal: `index.html`. Es autocontenido y funciona sin internet; la única petición de red es el envío del formulario de leads.
 
 ## Dónde editar (todo dentro de `index.html`)
-- `CONFIG.COACHING_URL`: enlace de WhatsApp para coaching.
-- `CONFIG.LEAD_FORM_URL`: URL del Web App de Google Apps Script. Si está vacía, el formulario abre WhatsApp.
+- `CONFIG.LEAD_FORM_URL`: URL del Web App de Google Apps Script. Todos los botones "por correo" llevan a este formulario (captura de correo; si falla el envío muestra un error, no abre otra app).
   - El envío es `fetch(url, {method:'POST', mode:'no-cors', body: URLSearchParams})`.
-  - Campos: `nombre`, `email`, `whatsapp`, `objetivo`, `idioma` (es/en), `fuente` = `app-plan-4-semanas`.
+  - Campos: `nombre`, `email` (obligatorio), `whatsapp` (siempre vacío, se mantiene por compatibilidad con Code.gs), `objetivo`, `idioma` (es/en), `fuente` = `app-plan-4-semanas`.
   - Hay un honeypot `website`: si viene lleno, no se envía nada.
 - `CONFIG.VIDEOS`: `{ idEjercicio: "https://..." }`. El botón de video solo aparece cuando hay URL. También sirve `EX[id].videoUrl`.
 - `CONFIG.RETO_BALMORE.ENTRIES`: agrega un registro por semana, por ejemplo `{ date: "2026-10-09", weight: 247.5, note: { es: "...", en: "..." } }`.
