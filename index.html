@@ -328,6 +328,16 @@ select.inp{background-image:linear-gradient(45deg,transparent 50%,#566074 50%),l
 .chip{background:var(--bh-tint-bronze);border:1px solid transparent;border-radius:var(--bh-radius-pill);padding:4px 10px;color:var(--bh-gray)}
 .chip.k{background:var(--bh-tint-burgundy)}
 .ex .meta,.ftag{background:var(--bh-tint-bronze);border:1px solid transparent;color:var(--bh-bronze)}
+.foot.bh-foot{margin:8px 0 18px;padding:18px 0 0;border-top:1px solid var(--line);font-size:13px}
+.bh-foot nav{position:static;z-index:auto;background:none;border:none;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:0 16px;margin:0 0 8px}
+.bh-foot nav a{color:var(--bh-navy);font:700 13.5px/1.2 var(--fh);text-decoration:none;padding:14px 4px;display:inline-block}
+.bh-foot nav a:hover{color:var(--bh-burgundy)}
+.bh-foot nav a[aria-current]{color:var(--bh-burgundy)}
+.bh-foot .soc{display:flex;justify-content:center;gap:10px;margin:0 0 12px}
+.bh-foot .soc a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center}
+.bh-foot .soc svg{width:20px;height:20px}
+.bh-foot .slogan{font:900 15px/1.3 var(--fh);color:var(--bh-navy);margin:0 0 6px}
+.bh-foot p{margin:4px 0}
 </style>
 </head>
 <body>
@@ -1504,7 +1514,12 @@ function vInicio() {
     ${Object.entries(CONFIG.SOCIAL).map(([k, v]) => `<a href="${esc(v.url)}" target="_blank" rel="noopener" data-net="${k}"><svg class="ico" viewBox="0 0 24 24">${sicons[k] || sicons.instagram}</svg><span><b>${names[k] || k}</b><span>${esc(v.handle)}</span></span><i>→</i></a>`).join("")}
   </div></div>
   <div class="disc">${t("disc")}</div>
-  <p class="foot">© ${new Date().getFullYear()} ${esc(CONFIG.BRAND_NAME)} · ${t("foot")}</p>`;
+  <footer class="foot bh-foot" id="appFoot">
+    <nav aria-label="Apps"><a href="./" aria-current="page">${bi("Fitness para principiantes", "Beginner fitness")}</a><a href="https://balmorehernandez.com/presupuesto/">${bi("Presupuesto familiar", "Family budget")}</a><a href="https://balmorehernandez.com/trading/">${bi("Aprende a hacer trades gratis", "Learn to trade for free")}</a></nav>
+    <div class="soc">${Object.entries(CONFIG.SOCIAL).map(([k, v]) => `<a href="${esc(v.url)}" target="_blank" rel="noopener" aria-label="${names[k] || k} ${esc(v.handle)}" data-net="${k}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${sicons[k] || sicons.instagram}</svg></a>`).join("")}</div>
+    <p class="slogan" lang="en">${esc(t("tagline"))}</p>
+    <p>© ${new Date().getFullYear()} ${esc(CONFIG.BRAND_NAME)} · ${t("foot")}</p>
+  </footer>`;
 }
 
 /* ---------- Formulario de leads ---------- */
